@@ -3,12 +3,14 @@
 
 #include"String.h"
 #include"Student.h"
+#include "Worker.h"
 using namespace std;
 
 
 
 int main()
 {
+
 
 	//21.09.26
 
@@ -19,15 +21,23 @@ int main()
 	String b1(s1);
 	b1.print();*/
 
-	Student h1(80, "Igor", 2);
+	/*Student h1(80, "Igor", 2);
 	h1.displayInfo();
 	
 
 	Student p1(h1);
+
 	p1.displayInfo();
 
 
+	Student i1(11);
+	i1 = p1;
+	i1.displayInfo();*/
 
+
+	Worker w1("Ivan", "Ingeneer", 2018, 1000);
+
+	w1.print();
 
 
 

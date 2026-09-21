@@ -56,7 +56,7 @@ Array::Array(int s)
 }
 
 Array::Array(const Array& obj) {
-	cout << "copyconstr\n";
+	cout << "copyconstr array\n";
 	size = obj.size;
 	arr = new int[size];
 	for (size_t i = 0; i < size; i++)
@@ -80,6 +80,8 @@ Array& Array::operator=(const Array& obj) {
 		arr[i] = obj.arr[i];
 	}
 	return *this;
+
+	cout << "copycontsr with oper\n";
 }
 
 

@@ -21,7 +21,7 @@ public:
         cout << "constructor int\n";
     }
 
-    String(char* txt) {
+    String(const char* txt) {
         size = strlen(txt);
         str = new char[size + 1];
         strcpy(str, txt);
@@ -34,6 +34,28 @@ public:
         str = new char[size + 1];
         strcpy(str, obj.str);
         cout << "copydestr\n";
+    }
+
+    String& operator=(const String& obj) {
+        if (this == &obj)
+        {
+            return *this;
+        }
+
+        delete[] str;
+        size = obj.size;
+        str = new char[size + 1];
+        strcpy(str, obj.str);
+        
+        return *this;
+    }
+
+    String& operator=(const char* txt) {
+        delete[] str;
+        size = strlen(txt);
+        str = new char[size + 1];
+        strcpy(str, txt);
+        return *this;
     }
 
     ~String() {

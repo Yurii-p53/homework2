@@ -37,10 +37,23 @@ public:
 		setName(obj.name);
 		setAge(obj.age);
 		count++;
-		cout << "constcopy\n";
+		cout << "copyconstr student\n";
 
 	}
 
+	Student& operator=(const Student& obj) {
+		if (this == &obj)
+		{
+			return *this;
+		}
+		delete[] name;
+
+		setName(obj.name);
+		setAge(obj.age);
+		this->marks = obj.marks;
+
+		return *this;
+	}
 
 	~Student()
 	{
