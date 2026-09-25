@@ -41,6 +41,8 @@ public:
 	void fill(int value);
 
 	int getSize();
+
+	int& operator[](int idx);
 };
 
 

@@ -79,5 +79,6 @@ public:
 		pos.print();
 		cout << "Salary: " << salary << "$" << endl;
 		cout << "God postuplenia: " << year << endl;
+		cout << endl;
 	}
 };

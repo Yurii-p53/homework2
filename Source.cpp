@@ -4,12 +4,45 @@
 #include"String.h"
 #include"Student.h"
 #include "Worker.h"
+#include "Fraction.h"
 using namespace std;
 
 
 
 int main()
 {
+	// 25.09.26
+
+	int a = 5;
+	int b = ! a;
+
+	Fraction f1(3, 5);
+	Fraction f2(2, 3);
+	/*Fraction f4 = f1 + f2;
+
+	f4.show();*/
+
+	Fraction f3 = -f1;
+	(f2++).show();
+	//(++f2).show();
+
+
+
+	f1 = f2 + 5;
+	f1.show();
+
+	f1 = 5 + f2;
+	f1.show();
+
+	if (f1 < f2) {
+		cout << "<\n";
+	}
+	else {
+		cout << ">\n";
+	}
+
+	cin >> f2;
+	cout << f2;
 
 
 	//21.09.26
@@ -34,10 +67,13 @@ int main()
 	i1 = p1;
 	i1.displayInfo();*/
 
+	
 
-	Worker w1("Ivan", "Ingeneer", 2018, 1000);
-
+	/*Worker w1("Ivan", "Ingeneer", 2018, 1000);
+	Worker w2("Ivan2", "Ingeneer2", 1999, 1500);
 	w1.print();
+	w2.print();*/
+
 
 
 
@@ -55,10 +91,6 @@ int main()
 	//Student s1(1, "Vasya", 30);
 
 
-
-	/*Array a(10);
-	a.setRandom();
-	a.show();*/
 
 
 
