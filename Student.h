@@ -10,13 +10,17 @@ class Student
 {
 	char* name = nullptr;
 	int   age = 0;
-	Array marks;
+	Array<int> marks;
 
 	const int id;
 
 	static int count;
 
 public:
+
+	Student() : id(0) {
+
+	}
 
 	Student(int id) : id{ id }
 	{

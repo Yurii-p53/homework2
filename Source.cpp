@@ -11,38 +11,46 @@ using namespace std;
 
 int main()
 {
+
+	Array<int> a(10);
+
+
+
+
+
+
 	// 25.09.26
 
-	int a = 5;
-	int b = ! a;
+	//int a = 5;
+	//int b = ! a;
 
-	Fraction f1(3, 5);
-	Fraction f2(2, 3);
-	/*Fraction f4 = f1 + f2;
+	//Fraction f1(3, 5);
+	//Fraction f2(2, 3);
+	///*Fraction f4 = f1 + f2;
 
-	f4.show();*/
+	//f4.show();*/
 
-	Fraction f3 = -f1;
-	(f2++).show();
-	//(++f2).show();
+	//Fraction f3 = -f1;
+	//(f2++).show();
+	////(++f2).show();
 
 
 
-	f1 = f2 + 5;
-	f1.show();
+	//f1 = f2 + 5;
+	//f1.show();
 
-	f1 = 5 + f2;
-	f1.show();
+	//f1 = 5 + f2;
+	//f1.show();
 
-	if (f1 < f2) {
-		cout << "<\n";
-	}
-	else {
-		cout << ">\n";
-	}
+	//if (f1 < f2) {
+	//	cout << "<\n";
+	//}
+	//else {
+	//	cout << ">\n";
+	//}
 
-	cin >> f2;
-	cout << f2;
+	//cin >> f2;
+	//cout << f2;
 
 
 	//21.09.26

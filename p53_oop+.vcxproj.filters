@@ -35,5 +35,8 @@
     <ClInclude Include="Fraction.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Var.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
