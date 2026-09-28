@@ -1,7 +1,9 @@
 #pragma once
+#include<cassert>
+
 #include <iostream>
 
-#include<Fraction.h>
+
 
 using namespace std;
 template<class T>
@@ -22,11 +24,26 @@ public:
 
 	~Array();
 
+
+	int getSize() const;
+	void setSize(int newS, int grow = 1);
+	int getUpperBound() const;
+	bool isEmpty() const;
+	void freeExtra();
+	void removeAll();
+	T* getAt(int index) const;
+	void setAt(int index, const T& value);
+	void add(const T& value);
+	void append(const Array<T>& oth);
+	T* getdata();
+	const T* getdata() const;
+	void insertAt(int index, const T& value);
+	void removeAt(int index);
+
+
 	void setRand() const;
 
 	void show() const;
-
-	void add(const T& value);
 
 	void remove(int index);
 
@@ -51,14 +68,6 @@ public:
 	int get(int index) const;
 
 	void set(int index, const T& value) const;
-
-	// int getMax() const;
-
-	// int getMin() const;
-
-	//int getSum() const;
-
-	// double getAvg() const;
 
 	bool contains(const T& value) const;
 
@@ -98,6 +107,13 @@ public:
 
 	
 };
+
+template<class T>
+void Array<T>::removeAll()
+{
+
+}
+
 
 template<class T>
 Array<T>::Array() : arr(nullptr), size(0)
@@ -167,7 +183,7 @@ void Array<Fraction>::setRand() const
 	int minValue = 0, int maxValue = 9;
 	for (int i = 0; i < size; i++)
 	{
-		arr[i] = Fraction(rand() % (maxValue - minValue + 1) + minValue);
+		arr[i] = rand() % (maxValue - minValue + 1) + minValue;
 	}
 }
 
@@ -258,7 +274,8 @@ int Array<T>::countValue(const T& value) const {
 }
 
 template<class T>
-bool Array<T>::operator[](int index) {
+T& Array<T>::operator[](int index) {
+	assert(index >= 0 && index < size);
 	return arr[index];
 }
 

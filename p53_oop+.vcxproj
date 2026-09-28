@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClInclude Include="ARR.h" />
     <ClInclude Include="Fraction.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Var.h" />
