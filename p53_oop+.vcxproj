@@ -131,13 +131,11 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ARR.h" />
+    <ClInclude Include="Bus.h" />
     <ClInclude Include="Fraction.h" />
-    <ClInclude Include="Matrix.h" />
-    <ClInclude Include="String.h" />
-    <ClInclude Include="Student.h" />
-    <ClInclude Include="Var.h" />
-    <ClInclude Include="Worker.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="PriorityQueue.h" />
+    <ClInclude Include="Queue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

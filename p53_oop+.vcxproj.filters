@@ -20,25 +20,19 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="String.h">
+    <ClInclude Include="Node.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="ARR.h">
+    <ClInclude Include="Queue.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Student.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="Worker.h">
+    <ClInclude Include="PriorityQueue.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="Fraction.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Var.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix.h">
+    <ClInclude Include="Bus.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

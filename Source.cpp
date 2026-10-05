@@ -1,10 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
-
-#include"String.h"
-#include"Student.h"
-#include "Worker.h"
+#include "Node.h"
+#include "Windows.h"
+#include "Queue.h"
+#include "PriorityQueue.h"
 #include "Fraction.h"
+#include "Bus.h"
 using namespace std;
 
 
@@ -12,7 +13,61 @@ using namespace std;
 int main()
 {
 
-	Array<int> a(10);
+	// 05.10.2026
+
+	/*Queue<int> q = { 2,5,6,7,8,0,3 };
+	
+	q.enqueue(10);
+	q.ring();
+	q.print();
+	cout << q.peek() << endl;
+	q.clear();
+	q.print();*/
+
+
+	/*PriorityQueue<int> pq;
+	pq.enqueue(10, 1);
+	pq.enqueue(20, 2);
+	pq.enqueue(10, 1);
+	pq.enqueue(30, 3);
+	pq.enqueue(20, 12);
+	pq.print();
+
+	PriorityQueue<Fraction, float> p;
+	p.enqueue(Fraction(2, 3), (float)Fraction(2, 3));
+	p.enqueue(Fraction(1, 3), (float)Fraction(1, 3));
+	p.enqueue(Fraction(3, 3), (float)Fraction(3, 3));
+	p.enqueue(Fraction(5, 3), (float)Fraction(5, 3));
+	p.enqueue(Fraction(1, 3), (float)Fraction(1, 3));
+
+	p.print();*/
+
+
+	Queue<Bus> bus = { };
+	Queue<People> p;
+
+	int i = 0;
+	while (true)
+	{
+		if (i % 2 == 0)
+		{
+			cout << "[+] New passanger" << endl;
+			p.enqueue(People());
+
+		}
+		if (i % 10 == 0)
+		{
+			cout << "[!] -- Bus arrived-- " << endl;
+
+		}
+
+		Sleep(1000);
+		i++;
+	}
+
+
+
+	/*Array<int> a(10);*/
 
 
 
