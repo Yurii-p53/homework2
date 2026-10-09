@@ -35,5 +35,8 @@
     <ClInclude Include="Bus.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="ForwardList.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

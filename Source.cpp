@@ -5,6 +5,7 @@
 #include "Queue.h"
 #include "PriorityQueue.h"
 #include "Fraction.h"
+#include "ForwardList.h"
 #include "Bus.h"
 using namespace std;
 
@@ -12,6 +13,18 @@ using namespace std;
 
 int main()
 {
+	// 09.10.26
+
+	ForwardList<int> l = { 1, 2, 3 };
+	ForwardList<int> l1 = { 2, 2, 3 };
+	ForwardList<int> l2 = l1;
+	cout << l[1] << endl;
+	l2.print();
+
+	l2.remove(1);
+	l2.print();
+
+
 
 	// 05.10.2026
 
@@ -43,7 +56,7 @@ int main()
 	p.print();*/
 
 
-	Queue<Bus> bus = { };
+	/*Queue<Bus> bus = { };
 	Queue<People> p;
 
 	int i = 0;
@@ -63,7 +76,7 @@ int main()
 
 		Sleep(1000);
 		i++;
-	}
+	}*/
 
 
 

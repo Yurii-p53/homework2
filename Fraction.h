@@ -129,3 +129,4 @@ istream& operator>>(istream& in, Fraction& f)
 	in >> f.denominator;
 	return in;
 }
+

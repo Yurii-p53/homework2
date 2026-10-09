@@ -31,7 +31,10 @@ public:
 	size_t getSize() const;
 	
 	void ring();
+
 };
+
+
 
 template<class T>
 Queue<T>::Queue(){
@@ -144,5 +147,4 @@ void Queue<T>::ring()
 	last->next = nullptr;
 
 }
-
 
