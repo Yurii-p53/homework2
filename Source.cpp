@@ -6,6 +6,7 @@
 #include "PriorityQueue.h"
 #include "Fraction.h"
 #include "ForwardList.h"
+#include "List.h"
 #include "Bus.h"
 using namespace std;
 
@@ -13,16 +14,31 @@ using namespace std;
 
 int main()
 {
+	// 12.10.26
+
+	List<int> l = { 1, 2, 3, 4, 5 , 6, 7 ,8, 9, 10};
+	/*l.push_back(10);
+	l.push_front(20);
+	l.print();
+	l.insert(99, 2);*/
+	l.print();
+
+	
+	l.print();
+
+	cout << l.lastIndex(1);
+	
+	
 	// 09.10.26
 
-	ForwardList<int> l = { 1, 2, 3 };
+	/*ForwardList<int> l = { 1, 2, 3 };
 	ForwardList<int> l1 = { 2, 2, 3 };
 	ForwardList<int> l2 = l1;
 	cout << l[1] << endl;
 	l2.print();
 
 	l2.remove(1);
-	l2.print();
+	l2.print();*/
 
 
 

@@ -38,5 +38,8 @@
     <ClInclude Include="ForwardList.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

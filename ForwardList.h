@@ -1,6 +1,8 @@
+
 #pragma once
 
 #include <initializer_list>
+#include <iostream>
 
 #include "Node.h"
 
@@ -47,30 +49,39 @@ public:
 	size_t firstIndex(const T& value);
 	size_t lastIndex(const T& value);
 
-
 	int count(const T& value);
 	int count_if(bool(*predicate)(const T& value));
 };
+
 
 template<class T>
 Node<T>* ForwardList<T>::getNode(size_t index) const
 {
 	Node<T>* temp = first;
+
 	for (size_t i = 0; i < index; i++)
 	{
 		temp = temp->next;
 	}
+
 	return temp;
 }
 
 template<class T>
 ForwardList<T>::ForwardList()
 {
+	first = nullptr;
+	last = nullptr;
+	size = 0;
 }
 
 template<class T>
 ForwardList<T>::ForwardList(initializer_list<T> list)
 {
+	first = nullptr;
+	last = nullptr;
+	size = 0;
+
 	for (T elem : list)
 	{
 		push_back(elem);
@@ -85,6 +96,7 @@ ForwardList<T>::ForwardList(const ForwardList& obj)
 	size = 0;
 
 	Node<T>* temp = obj.first;
+
 	while (temp != nullptr)
 	{
 		push_back(temp->value);
@@ -97,13 +109,17 @@ ForwardList<T>& ForwardList<T>::operator=(const ForwardList& obj)
 {
 	if (this != &obj)
 	{
-		clear(); Node<T>* temp = obj.first;
-		while (temp !=nullptr)
+		clear();
+
+		Node<T>* temp = obj.first;
+
+		while (temp != nullptr)
 		{
 			push_back(temp->value);
 			temp = temp->next;
 		}
 	}
+
 	return *this;
 }
 
@@ -116,7 +132,6 @@ ForwardList<T>::~ForwardList()
 template<class T>
 void ForwardList<T>::push_front(const T& value)
 {
-	
 	if (size == 0)
 	{
 		first = last = new Node<T>(value);
@@ -126,8 +141,8 @@ void ForwardList<T>::push_front(const T& value)
 		Node<T>* newNode = new Node<T>(value);
 		newNode->next = first;
 		first = newNode;
-
 	}
+
 	size++;
 }
 
@@ -138,23 +153,23 @@ void ForwardList<T>::push_back(const T& value)
 	{
 		first = last = new Node<T>(value);
 	}
-
 	else
 	{
 		last->next = new Node<T>(value);
 		last = last->next;
-
 	}
+
 	size++;
 }
 
 template<class T>
 void ForwardList<T>::insert(const T& value, size_t index)
 {
-	if (index>size)
+	if (index > size)
 	{
 		return;
 	}
+
 	if (index == 0)
 	{
 		push_front(value);
@@ -167,8 +182,10 @@ void ForwardList<T>::insert(const T& value, size_t index)
 	{
 		Node<T>* pos = getNode(index - 1);
 		Node<T>* newNode = new Node<T>(value);
+
 		newNode->next = pos->next;
 		pos->next = newNode;
+
 		size++;
 	}
 }
@@ -180,8 +197,14 @@ void ForwardList<T>::pop_front()
 	{
 		Node<T>* temp = first;
 		first = first->next;
+
 		delete temp;
 		size--;
+
+		if (size == 0)
+		{
+			last = nullptr;
+		}
 	}
 }
 
@@ -190,9 +213,21 @@ void ForwardList<T>::pop_back()
 {
 	if (size > 0)
 	{
-		last = getNode(size - 2);
-		delete last->next;
-		last->next = nullptr;
+		if (size == 1)
+		{
+			delete first;
+			first = nullptr;
+			last = nullptr;
+		}
+		else
+		{
+			Node<T>* temp = getNode(size - 2);
+
+			delete last;
+			last = temp;
+			last->next = nullptr;
+		}
+
 		size--;
 	}
 }
@@ -200,27 +235,39 @@ void ForwardList<T>::pop_back()
 template<class T>
 void ForwardList<T>::remove(size_t index)
 {
-	if (index >= size) return;
-	if (index == 0) push_front();
-	else if (index == size - 1) push_back();
+	if (index >= size)
+	{
+		return;
+	}
+
+	if (index == 0)
+	{
+		pop_front();
+	}
+	else if (index == size - 1)
+	{
+		pop_back();
+	}
 	else
 	{
 		Node<T>* pos = getNode(index - 1);
 		Node<T>* temp = pos->next;
-		pos->next = pos->next->next;
+
+		pos->next = temp->next;
+
 		delete temp;
 		size--;
 	}
 }
 
 template<class T>
-inline T& ForwardList<T>::front() const
+T& ForwardList<T>::front() const
 {
 	return first->value;
 }
 
 template<class T>
-inline T& ForwardList<T>::back() const
+T& ForwardList<T>::back() const
 {
 	return last->value;
 }
@@ -234,7 +281,6 @@ T ForwardList<T>::at(size_t index) const
 template<class T>
 T& ForwardList<T>::operator[](int index) const
 {
- 
 	return getNode(index)->value;
 }
 
@@ -243,26 +289,38 @@ ForwardList<T> ForwardList<T>::operator+(const ForwardList<T>& list) const
 {
 	ForwardList<T> res(*this);
 	res += list;
-	return res;
 
+	return res;
+}
+
+template<class T>
+void ForwardList<T>::operator+=(const ForwardList<T>& list)
+{
+	Node<T>* temp = list.first;
+
+	while (temp != nullptr)
+	{
+		push_back(temp->value);
+		temp = temp->next;
+	}
 }
 
 template<class T>
 void ForwardList<T>::print()
 {
 	Node<T>* temp = first;
+
 	while (temp != nullptr)
 	{
 		cout << temp->value << " ";
 		temp = temp->next;
 	}
-	
 
 	cout << endl;
 }
 
 template<class T>
-void ForwardList<T>::clear() 
+void ForwardList<T>::clear()
 {
 	while (size > 0)
 	{
@@ -273,23 +331,26 @@ void ForwardList<T>::clear()
 template<class T>
 size_t ForwardList<T>::getSize() const
 {
-	size_t size;
-	return size();
+	return size;
 }
 
 template<class T>
 size_t ForwardList<T>::firstIndex(const T& value)
 {
 	Node<T>* temp = first;
-	while (temp!= nullptr)
+	size_t index = 0;
+
+	while (temp != nullptr)
 	{
 		if (temp->value == value)
 		{
-			return size;
+			return index;
 		}
+
 		temp = temp->next;
-		size++;
+		index++;
 	}
+
 	return -1;
 }
 
@@ -297,17 +358,57 @@ template<class T>
 size_t ForwardList<T>::lastIndex(const T& value)
 {
 	Node<T>* temp = first;
-	size_t idx = 0;
+	size_t index = 0;
 	size_t foundIndex = -1;
+
 	while (temp != nullptr)
 	{
 		if (temp->value == value)
 		{
-			foundIndex = idx;
+			foundIndex = index;
 		}
+
 		temp = temp->next;
-		idx++;
+		index++;
 	}
+
 	return foundIndex;
 }
 
+template<class T>
+int ForwardList<T>::count(const T& value)
+{
+	Node<T>* temp = first;
+	int count = 0;
+
+	while (temp != nullptr)
+	{
+		if (temp->value == value)
+		{
+			count++;
+		}
+
+		temp = temp->next;
+	}
+
+	return count;
+}
+
+template<class T>
+int ForwardList<T>::count_if(bool(*predicate)(const T& value))
+{
+	Node<T>* temp = first;
+	int count = 0;
+
+	while (temp != nullptr)
+	{
+		if (predicate(temp->value))
+		{
+			count++;
+		}
+
+		temp = temp->next;
+	}
+
+	return count;
+}
