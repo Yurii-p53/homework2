@@ -131,6 +131,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animals.h" />
     <ClInclude Include="Bus.h" />
     <ClInclude Include="Composition.h" />
     <ClInclude Include="ForwardList.h" />

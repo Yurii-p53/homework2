@@ -50,5 +50,8 @@
     <ClInclude Include="Inherit.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Animals.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
