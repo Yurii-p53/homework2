@@ -8,25 +8,57 @@
 #include "ForwardList.h"
 #include "List.h"
 #include "Bus.h"
+#include "Inherit.h"
+#include "Composition.h"
 using namespace std;
 
 
 
 int main()
 {
+	// 19.10
+
+	/*Engine* en = new Engine;
+	{
+		Car c(en);
+
+		STO sto;
+
+		sto.setEngine(c.getEngine());
+		sto.upgrade();
+	}
+
+	en->start();*/
+
+	/*Human h("Messi", 20);*/
+	Player p("Messi", 20, 980);
+	p.info();
+	p.method();
+
+
+	/*A a;
+	a.aaa = 10;
+
+	B b;
+	b.aaa = 10;
+
+	C c;
+	c.aaa = 10;*/
+	
+
 	// 12.10.26
 
-	List<int> l = { 1, 2, 3, 4, 5 , 6, 7 ,8, 9, 10};
+	/*List<int> l = { 1, 2, 3, 4, 5 , 6, 7 ,8, 9, 10};*/
 	/*l.push_back(10);
 	l.push_front(20);
 	l.print();
 	l.insert(99, 2);*/
-	l.print();
+	/*l.print();
 
 	
 	l.print();
 
-	cout << l.lastIndex(1);
+	cout << l.lastIndex(1);*/
 	
 	
 	// 09.10.26

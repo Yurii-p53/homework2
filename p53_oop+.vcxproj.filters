@@ -41,5 +41,14 @@
     <ClInclude Include="List.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Composition.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Inherit.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
