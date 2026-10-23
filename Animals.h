@@ -3,49 +3,61 @@
 
 using namespace std;
 
-class Animal 
+class Animal
 {
+	string name;
+	int age;
+
 public:
+	Animal(string n, int a): name(n), age(a) {}
+
+	virtual ~Animal() { cout << "Destr Animal" << endl; }
+
+
+
+	string getName() { return name; }
+
+	virtual string getType() { return "Animal"; }
+
+	virtual string getVoice() = 0;
+
+};
 	
-};
 
-class Dog : public Animal
+string Animal::getVoice()
 {
-	string* nameDog;
-public:
-	Dog(string nameDog) : nameDog(&nameDog) {
+	return "?????";
+}
 
-	}
-
-	~Dog()
-	{
-		delete nameDog;
-	}
-};
 
 class Cat : public Animal
 {
 public:
-	string* nameCat;
-	Cat(string nameCat) : nameCat(&nameCat) {
+	Cat(string n, int a) : Animal(n, a) {}
 
-	}
+	~Cat() { cout << "Destr Cat" << endl; }
 
-	~Cat() 
-	{
-		delete nameCat;
-	}
+	virtual string getType() override { return "Cat"; }
+
+	virtual string getVoice() override { return "Meow meow"; }
 };
 
-class Parrot : public Animal
+class Dog : public Animal
 {
-	string* nameParr;
-	Parrot(string nameParr) : nameParr(&nameParr) {
+public:
+	Dog(string n, int a) : Animal(n, a) {}
 
-	}
+	virtual string getType() override { return "Dog"; }
 
-	~Parrot()
-	{
-		delete nameParr;
-	}
+	virtual string getVoice() override { return "R-rah, r-rah!"; }
+};
+
+
+class Ravlik : public Animal
+{
+public:
+	Ravlik(string n, int a) : Animal(n, a) {}
+
+	virtual string getType() override { return "Ravlik"; }
+	virtual string getVoice() override { return Animal::getVoice(); }
 };

@@ -1,53 +1,57 @@
 #pragma once
 #include <iostream>
+
 using namespace std;
 
-//class Engine {
+//class Engine
+//{
 //	int cilindr = 4;
-//	
+//
 //public:
 //
 //	void start()
 //	{
-//		cout << "Engine started" << endl;
+//		cout << "Engine start" << endl;
 //	}
 //
 //	void stop()
 //	{
-//		cout << "Engine stoped" << endl;
+//		cout << "Engine stop" << endl;
 //	}
 //};
 //
-//class Car {
+//class Car
+//{
 //	Engine en;
 //
 //public:
+//
 //	void move()
 //	{
 //		en.start();
-//		
 //		en.stop();
 //	}
+//
 //};
 
 
-class Engine {
+
+class Engine
+{
 	int cilindr = 4;
 	int power = 50;
-
 
 public:
 
 	void start()
 	{
-		cout << "Engine started" << endl;
+		cout << "Engine start" << endl;
 	}
 
 	void stop()
 	{
-		cout << "Engine stoped" << endl;
+		cout << "Engine stop" << endl;
 	}
-
 
 	void powerUpgrade()
 	{
@@ -55,7 +59,8 @@ public:
 	}
 };
 
-class Car {
+class Car
+{
 	Engine* en;
 
 public:
@@ -66,14 +71,14 @@ public:
 	void move()
 	{
 		en->start();
-
 		en->stop();
 	}
 
-	/*Engine* getEngine() 
+	/*Engine* getEngine()
 	{
 		return en;
 	}*/
+
 };
 
 class STO
@@ -89,33 +94,28 @@ public:
 	void upgrade()
 	{
 		en->powerUpgrade();
-
 	}
 
 
 };
 
 
-class Human {
-	int age;
+class Human
+{
 	string name;
+	int age;
 
 public:
-	Human(string n, int a) // ctor
+	Human(string n, int a)
 	{
 		name = n;
 		age = a;
-		// cout << "Ctor Human \n";
-	}
-
-	Human()
-	{
-		age = 0;
+		//cout << "Ctor Human" << endl;
 	}
 
 	~Human()
 	{
-		// cout << "DeCtor Human \n";
+		//cout << "Dest Human \n";
 	}
 
 	void setAge(int a)
@@ -125,40 +125,99 @@ public:
 
 	void info()
 	{
-		cout << "Name: " << name << endl;
-		cout << "Age:  " << age << endl;
+		cout << "Name : " << name << endl;
+		cout << "Age  : " << age << endl;
 	}
 
 	void method()
 	{
 		// name;
 		// age;
-		// ..
-
-
 	}
 };
 
-class Player : public Human {
+class Player : public Human
+{
 	int goal;
 
 public:
 	Player(string n, int age, int goal) : goal(goal), Human(n, age)
 	{
-		// cout << "Ctor Player \n";
+		//cout << "Ctor Player" << endl;
 	}
 
 	~Player()
 	{
-		// cout << "DeCtor Player \n";
+		//cout << "Dest Player \n";
 	}
 
 	void info()
 	{
-		
 		Human::info();
-		cout << "Goal: " << goal << endl;
+		cout << "Goal : " << goal << endl;
 	}
 
 	void method() = delete;
 };
+
+
+
+class Device 
+{
+public:
+	int id;
+	
+	Device(int id) : id(id)
+	{
+
+	}
+};
+
+class LANDevice : virtual public Device
+{
+	int id;
+
+public:
+
+	LANDevice(int id, int id_d) : id(id), Device(id_d)
+	{
+
+	}
+
+	int getId() { return id; }
+};
+
+
+class WifiDevice : virtual public Device
+{
+	int id;
+
+public:
+
+	WifiDevice(int id, int id_d) : id(id), Device(id_d)
+	{
+
+	}
+
+	int getId() { return id; }
+};
+
+class Router : public WifiDevice, public LANDevice
+{
+	int id;
+
+public:
+	Router(int id, int id_l, int id_w, int id_d) : id(id), WifiDevice(id_w, id_d), LANDevice(id_l, id_d), Device(id_d)
+	{
+
+	}
+};
+
+//				    D
+//				  /   \
+//				 L     W
+//				  \   /
+//					R
+
+
+

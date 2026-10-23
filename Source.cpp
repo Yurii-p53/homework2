@@ -9,6 +9,7 @@
 #include "List.h"
 #include "Bus.h"
 #include "Inherit.h"
+#include "Animals.h"
 #include "Composition.h"
 using namespace std;
 
@@ -16,6 +17,60 @@ using namespace std;
 
 int main()
 {
+
+	// 23.10
+
+	Animal* c = new Cat("Tom2", 3);
+	cout << c->getType() << endl;
+
+	//// 1 v
+	//Animal& a = c;
+	//cout << a.getType() << endl;
+
+	//// 2 v
+	//Animal* aa = &c;
+	//cout << aa->getType() << endl;
+
+	delete c;
+
+
+	//// Cat* c...
+	//Animal* c = new Cat("Tom", 3);
+	//// Dog* d...
+	//Animal* d = new Dog("Spike", 5);
+
+
+
+	//Animal* aa[] = { c , d, new Ravlik("Vasya", 1)};
+	//for (size_t i = 0; i < 3; i++)
+	//{
+	//	cout << aa[i]->getName() << endl;
+	//	cout << aa[i]->getType() << endl;
+	//	cout << aa[i]->getVoice() << endl;
+	//	cout << endl;
+	//}
+
+	
+
+
+
+	/*Router r(123, 456, 789, 999);
+	cout << r.LANDevice::getId() << endl;
+	cout << r.WifiDevice::getId() << endl;
+
+	r.LANDevice::Device::id = 10;
+
+	cout << r.LANDevice::Device::id << endl;
+	cout << r.WifiDevice::Device::id << endl;
+
+	r.WifiDevice::Device::id = 20;
+	cout << r.LANDevice::Device::id << endl;
+	cout << r.WifiDevice::Device::id << endl;*/
+
+
+
+
+
 	// 19.10
 
 	/*Engine* en = new Engine;
@@ -31,9 +86,9 @@ int main()
 	en->start();*/
 
 	/*Human h("Messi", 20);*/
-	Player p("Messi", 20, 980);
-	p.info();
-	p.method();
+
+	/*Player p("Messi", 20, 980);
+	p.info();*/
 
 
 	/*A a;
