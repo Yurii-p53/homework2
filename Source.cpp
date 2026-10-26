@@ -18,10 +18,13 @@ using namespace std;
 int main()
 {
 
+	
+
+	
 	// 23.10
 
-	Animal* c = new Cat("Tom2", 3);
-	cout << c->getType() << endl;
+	// Animal* c = new Cat("Tom2", 3);
+	// cout << c->getType() << endl;
 
 	//// 1 v
 	//Animal& a = c;
@@ -31,7 +34,7 @@ int main()
 	//Animal* aa = &c;
 	//cout << aa->getType() << endl;
 
-	delete c;
+	// delete c;
 
 
 	//// Cat* c...
