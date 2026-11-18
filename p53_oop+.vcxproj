@@ -136,7 +136,9 @@
     <ClInclude Include="Composition.h" />
     <ClInclude Include="ForwardList.h" />
     <ClInclude Include="Fraction.h" />
+    <ClInclude Include="func.h" />
     <ClInclude Include="Inherit.h" />
+    <ClInclude Include="Island.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="PriorityQueue.h" />

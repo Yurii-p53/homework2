@@ -9,20 +9,119 @@
 #include "List.h"
 #include "Bus.h"
 #include "Inherit.h"
-#include "Animals.h"
 #include "Composition.h"
+#include "func.h"
+#include <algorithm>
+#include <thread>
+#include<vector>
+#include<list>
+#include "Island.h"
+
+#include <ctime>
 using namespace std;
 
+template<class Cont>
 
+void print(Cont& cont)
+{
+	for (auto elem : cont)
+	{
+		cout << elem << " ";
+	}
+	cout << endl;
+}
+
+
+void HelloWorld(string arg)
+{
+	cout << "Hello World" << endl;
+}	
+
+
+void quicksort(int a)
+{
+	
+}
+
+namespace Goo = Foo::Doo;
+
+void clock11()
+{
+	int a = 100;
+	while (true)
+	{
+		cout << a++ << endl;
+		Sleep(1000);
+	}
+}
 
 int main()
+
 {
+	/*using std::cout;
+	using std::cin;
+	using std::endl;
 
-	
+	thread t1(clock11);
 
+
+	int a = 1;
+	while (true)
+	{
+		cout << a++;
+		Sleep(500);
+	}
+
+	cout.setf(ios::boolalpha);
+
+	Goo::foo();
+
+	HelloWorld("print");
+
+
+*/
+
+	srand(static_cast<unsigned>(time(nullptr)));
+
+	Island island;
+	island.start();
+
+
+
+
+
+
+
+	/*shared_ptr<Cat> k1 = make_shared<Cat>("Tom", 5);
+	shared_ptr<Cat> k2(k1);
+	shared_ptr<Cat> k3 = k2;
+	shared_ptr<Cat> k4;*/
+
+	/*vector<int> v = { 1,2,3,4,5,6 };
 	
+		
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+	cout << v.max_size() << endl;
+
+	auto it = v.begin();
+	cout << *it << endl;*/
+	/*vector<int> v = { 1,2,3,4,5,6,7,8 };*/
+	//
+	//
+	//
+	
+	/*vector<Cat> vc = { Cat("Tom", 3), Cat("Murka", 2) };
+	vc.insert(vc.begin() + 1, Cat("Barsik", 4));
+	vc.emplace(vc.begin() + 1, "Barsik", 4);*/
+	
+		//
+		//
+
+		//
+
 	// 23.10
-
+	
 	// Animal* c = new Cat("Tom2", 3);
 	// cout << c->getType() << endl;
 
@@ -305,4 +404,4 @@ int main()
 
 
 	return 0;
-}
+};

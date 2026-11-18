@@ -53,5 +53,11 @@
     <ClInclude Include="Animals.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="func.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Island.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
